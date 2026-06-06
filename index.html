@@ -548,6 +548,256 @@
       flex-shrink: 0;
     }
 
+    /* ADMIN LAYER */
+    .admin-bar {
+      display: none;
+      background: #1C1C1A;
+      color: #fff;
+      padding: 8px 2rem;
+      font-size: 12.5px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .admin-bar.visible { display: flex; }
+
+    .admin-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .admin-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      display: inline-block;
+    }
+
+    .admin-bar-right {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-admin-add {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: opacity 0.15s;
+    }
+
+    .btn-admin-add:hover { opacity: 0.85; }
+
+    .btn-admin-logout {
+      background: transparent;
+      color: #888;
+      border: 1px solid #444;
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: color 0.15s;
+    }
+
+    .btn-admin-logout:hover { color: #fff; border-color: #888; }
+
+    .quest-card .admin-actions {
+      display: none;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    body.admin-mode .quest-card .admin-actions { display: flex; }
+
+    .btn-edit, .btn-delete {
+      font-size: 11.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+
+    .btn-edit { background: #E6F1FB; color: #185FA5; }
+    .btn-delete { background: #FDECEA; color: #B91C1C; }
+    .btn-edit:hover, .btn-delete:hover { opacity: 0.75; }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .modal-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 5px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--green);
+    }
+
+    .form-textarea { resize: vertical; min-height: 80px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+
+    .btn-cancel {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 9px 18px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .btn-save {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: opacity 0.15s;
+    }
+
+    .btn-save:hover { opacity: 0.85; }
+
+    /* PASSWORD PROMPT */
+    .pw-prompt {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pw-prompt.open { display: flex; }
+
+    .pw-box {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .pw-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .pw-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .pw-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-align: center;
+      letter-spacing: 0.1em;
+      outline: none;
+      margin-bottom: 10px;
+      transition: border-color 0.15s;
+    }
+
+    .pw-input:focus { border-color: var(--green); }
+    .pw-input.error { border-color: #B91C1C; }
+
+    .pw-error {
+      font-size: 12px;
+      color: #B91C1C;
+      margin-bottom: 8px;
+      display: none;
+    }
+
+    .pw-error.visible { display: block; }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -569,14 +819,90 @@
 </head>
 <body>
 
+  <!-- PASSWORD PROMPT -->
+  <div class="pw-prompt" id="pw-prompt">
+    <div class="pw-box">
+      <div class="pw-title">🔐 Admin Access</div>
+      <div class="pw-sub">Nhập password để vào chế độ quản lý</div>
+      <input class="pw-input" id="pw-input" type="password" placeholder="password" />
+      <div class="pw-error" id="pw-error">Sai password, thử lại.</div>
+      <button class="btn-save" style="width:100%;margin-top:4px;" onclick="checkPassword()">Xác nhận</button>
+    </div>
+  </div>
+
+  <!-- QUEST EDIT MODAL -->
+  <div class="modal-overlay" id="quest-modal">
+    <div class="modal">
+      <div class="modal-title" id="modal-title">Thêm Quest mới</div>
+      <div class="form-group">
+        <label class="form-label">Tên Quest</label>
+        <input class="form-input" id="f-title" placeholder="VD: Hub Job, BA/Sale Google..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mô tả</label>
+        <textarea class="form-textarea" id="f-desc" placeholder="Mô tả ngắn về quest này..."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select class="form-select" id="f-status">
+            <option value="open">Open</option>
+            <option value="active">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Loại</label>
+          <select class="form-select" id="f-type">
+            <option value="ba">BA</option>
+            <option value="community">Community</option>
+            <option value="startup">Startup</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Project Leader</label>
+        <input class="form-input" id="f-leader" placeholder="Tên người lead" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Members (cách nhau bằng dấu phẩy)</label>
+        <input class="form-input" id="f-members" placeholder="VD: Ngọc Linh, Thảo, Hiếu" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Có brief / link không?</label>
+        <select class="form-select" id="f-link">
+          <option value="false">Không</option>
+          <option value="true">Có 📎</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Huỷ</button>
+        <button class="btn-save" onclick="saveQuest()">Lưu quest</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN BAR -->
+  <div class="admin-bar" id="admin-bar">
+    <div class="admin-bar-left">
+      <span class="admin-dot"></span>
+      <span>Admin mode — Hub Biz Quest Board</span>
+    </div>
+    <div class="admin-bar-right">
+      <button class="btn-admin-add" onclick="openAddModal()">+ Thêm Quest</button>
+      <button class="btn-admin-logout" onclick="logout()">Đăng xuất</button>
+    </div>
+  </div>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Hub<span>Biz</span></a>
     <ul class="nav-links">
       <li><a href="#how">How it works</a></li>
       <li><a href="#quests">Quests</a></li>
+      <li><a href="#bai-toan">30 Bài toán</a></li>
       <li><a href="#guild">Guild Hall</a></li>
-      <li><a href="mailto:contact@hihub.vn" class="nav-cta">Join the guild</a></li>
+      <li><a href="mailto:son.vuong.workspace@gmail.com" class="nav-cta">Join the guild</a></li>
     </ul>
   </nav>
 
@@ -666,6 +992,22 @@
     </div>
   </section>
 
+  <!-- 30 BÀI TOÁN HÀ NỘI -->
+  <section id="bai-toan" style="background:var(--bg);padding:5rem 0;border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="section-eyebrow">Giai đoạn 2026 – 2030 · Đợt 1</div>
+      <div class="section-title">30 Bài toán lớn của Hà Nội</div>
+      <div id="bt-filters" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.75rem;">
+        <button class="filter-btn active" data-group="all">Tất cả</button>
+        <button class="filter-btn" data-group="do-thi">🏙 Điểm nghẽn đô thị</button>
+        <button class="filter-btn" data-group="khong-gian">🏗 Không gian đô thị</button>
+        <button class="filter-btn" data-group="kinh-te">⚡ Kinh tế & Công nghệ</button>
+        <button class="filter-btn" data-group="an-sinh">🛡 An ninh & An sinh</button>
+      </div>
+      <div id="bt-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;"></div>
+    </div>
+  </section>
+
   <!-- GUILD HALL -->
   <section class="guild-section" id="guild">
     <div class="container" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem;">
@@ -684,7 +1026,7 @@
           <div class="guild-desc">Hub Biz runs regular offline bonding events — casual socials, workshops, and meetups. Show up, connect with the community, and wait for the next quest that catches your eye. When it does, form your squad and go.</div>
         </div>
       </div>
-      <a href="mailto:contact@hihub.vn" class="btn-primary" style="margin-top:0.5rem;">Join Hub Biz →</a>
+      <a href="mailto:son.vuong.workspace@gmail.com" class="btn-primary" style="margin-top:0.5rem;">Join Hub Biz →</a>
     </div>
   </section>
 
@@ -694,9 +1036,12 @@
   </footer>
 
   <script>
+    // ─── CONFIG ───────────────────────────────────────────────────
+    const ADMIN_PASSWORD = 'hubnetwork';
+
     // ─── DATA LAYER ───────────────────────────────────────────────
-    // Khi chuyển sang Supabase, chỉ cần thay phần này bằng API call
-    // Giữ nguyên hàm renderQuests() bên dưới
+    // Khi chuyển sang Supabase, thay QUESTS + saveData() bằng API calls
+    // Giữ nguyên mọi hàm render bên dưới
     // ──────────────────────────────────────────────────────────────
 
     const AVATAR_PALETTE = [
@@ -726,129 +1071,73 @@
       return `<div class="${cls}" style="background:${bg};color:${color};">${initials(name)}</div>`;
     }
 
-    // ── QUEST DATA ────────────────────────────────────────────────
-    const QUESTS = [
-      {
-        id: '001',
-        title: 'Tech & Growth Builder',
-        desc: 'Xây dựng buổi co-working định kỳ cho tech và product people trong hệ sinh thái Hub Biz.',
-        status: 'active',
-        type: 'community',
-        leader: 'Đức',
-        members: [],
-        link: true,
-      },
-      {
-        id: '002',
-        title: 'Hub Job',
-        desc: 'Collect JD và contact HR từ các đối tác doanh nghiệp. Collect CV của member Hub Biz. Hỗ trợ kết nối việc làm cho các member.',
-        status: 'active',
-        type: 'community',
-        leader: 'Ryan Thành',
-        members: ['Hiếu', 'Ngọc Linh', 'Thùy Dưỡng', 'Thảo'],
-        link: true,
-      },
-      {
-        id: '003',
-        title: 'NDAMap · 1HUB · Hublock BA',
-        desc: 'BA để bóc tách đề bài của 3 startup NDAMap, Hublock, 1Hub và ướm vào 30 bài toán Hà Nội.',
-        status: 'active',
-        type: 'startup',
-        leader: 'Long',
-        members: ['Vũ Minh Tâm'],
-        link: true,
-      },
-      {
-        id: '004',
-        title: 'BA / Sale — Google',
-        desc: 'Phân tích product Google, ướm vào 30 bài toán của Hà Nội, sau đó trình bày với team Google để form partnership chính thức.',
-        status: 'active',
-        type: 'ba',
-        leader: '',
-        members: ['Ngọc Linh'],
-        link: false,
-      },
-      {
-        id: '005',
-        title: 'BA / Sale — OpenAI',
-        desc: 'Phân tích hệ sinh thái OpenAI, ướm vào bài toán Hà Nội, sau đó trình bày để họ tài trợ brand name, hiện kim và token tổ chức hackathon.',
-        status: 'open',
-        type: 'ba',
-        leader: '',
-        members: [],
-        link: false,
-      },
-      {
-        id: '006',
-        title: 'BA / Sale — MobiFone',
-        desc: 'Đang trong giai đoạn gặp gỡ lần đầu để trao đổi và xác định scope hợp tác.',
-        status: 'open',
-        type: 'ba',
-        leader: '',
-        members: ['Ngọc Linh'],
-        link: false,
-      },
-      {
-        id: '007',
-        title: 'BA / Sale — VinaCapital',
-        desc: 'Đang trong giai đoạn gặp gỡ lần đầu để trao đổi và xác định scope hợp tác.',
-        status: 'open',
-        type: 'ba',
-        leader: '',
-        members: [],
-        link: false,
-      },
-      {
-        id: '008',
-        title: 'Hub Government Relations & Public Policy',
-        desc: 'Position Hub thành expert về public policy và government affairs đổi mới sáng tạo. Network với các đối tác công, gặp gỡ lãnh đạo đảng và nhà nước.',
-        status: 'active',
-        type: 'community',
-        leader: 'Sơn',
-        members: [],
-        link: true,
-      },
-      {
-        id: '009',
-        title: 'Breakdown 30 Bài Toán Thành Phố',
-        desc: 'Phân tích, breakdown 30 bài toán thành phố thành một template chuẩn để đẩy lên website Hub.',
-        status: 'active',
-        type: 'ba',
-        leader: 'Trí Nguyên',
-        members: [],
-        link: true,
-      },
-      {
-        id: '010',
-        title: 'Hệ Thống Dữ Liệu Kinh Tế Xã Hội',
-        desc: 'Xây dựng hệ thống thu thập và tổng hợp dữ liệu kinh tế xã hội phục vụ các dự án phân tích của Hub.',
-        status: 'open',
-        type: 'ba',
-        leader: 'Long',
-        members: [],
-        link: true,
-      },
-      {
-        id: '011',
-        title: 'Pilot Training: AI in Business Writing',
-        desc: 'Tổ chức buổi training nội bộ với Jason Trinh về cách sử dụng AI hợp lý trong business writing.',
-        status: 'active',
-        type: 'community',
-        leader: 'Phương Anh',
-        members: [],
-        link: false,
-      },
-      {
-        id: '012',
-        title: 'YUSEA Urban Planning',
-        desc: 'Đồng tổ chức với YUSEA các buổi community building về đổi mới sáng tạo trong urban planning.',
-        status: 'active',
-        type: 'community',
-        leader: 'Thảo',
-        members: [],
-        link: false,
-      },
+    // ── DEFAULT QUEST DATA ─────────────────────────────────────────
+    const DEFAULT_QUESTS = [
+      { id:'001', title:'Tech & Growth Builder', desc:'Xây dựng buổi co-working định kỳ cho tech và product people trong hệ sinh thái Hub Biz.', status:'active', type:'community', leader:'Đức', members:[], link:true },
+      { id:'002', title:'Hub Job', desc:'Collect JD và contact HR từ các đối tác doanh nghiệp. Collect CV của member Hub Biz. Hỗ trợ kết nối việc làm cho các member.', status:'active', type:'community', leader:'Ryan Thành', members:['Hiếu','Ngọc Linh','Thùy Dưỡng','Thảo'], link:true },
+      { id:'003', title:'NDAMap · 1HUB · Hublock BA', desc:'BA để bóc tách đề bài của 3 startup NDAMap, Hublock, 1Hub và ướm vào 30 bài toán Hà Nội.', status:'active', type:'startup', leader:'Long', members:['Vũ Minh Tâm'], link:true },
+      { id:'004', title:'BA / Sale — Google', desc:'Phân tích product Google, ướm vào 30 bài toán của Hà Nội, sau đó trình bày với team Google để form partnership chính thức.', status:'active', type:'ba', leader:'', members:['Ngọc Linh'], link:false },
+      { id:'005', title:'BA / Sale — OpenAI', desc:'Phân tích hệ sinh thái OpenAI, ướm vào bài toán Hà Nội, sau đó trình bày để họ tài trợ brand name, hiện kim và token tổ chức hackathon.', status:'open', type:'ba', leader:'', members:[], link:false },
+      { id:'006', title:'BA / Sale — MobiFone', desc:'Đang trong giai đoạn gặp gỡ lần đầu để trao đổi và xác định scope hợp tác.', status:'open', type:'ba', leader:'', members:['Ngọc Linh'], link:false },
+      { id:'007', title:'BA / Sale — VinaCapital', desc:'Đang trong giai đoạn gặp gỡ lần đầu để trao đổi và xác định scope hợp tác.', status:'open', type:'ba', leader:'', members:[], link:false },
+      { id:'008', title:'Hub Government Relations & Public Policy', desc:'Position Hub thành expert về public policy và government affairs đổi mới sáng tạo. Network với các đối tác công, gặp gỡ lãnh đạo đảng và nhà nước.', status:'active', type:'community', leader:'Sơn', members:[], link:true },
+      { id:'009', title:'Breakdown 30 Bài Toán Thành Phố', desc:'Phân tích, breakdown 30 bài toán thành phố thành một template chuẩn để đẩy lên website Hub.', status:'active', type:'ba', leader:'Trí Nguyên', members:[], link:true },
+      { id:'010', title:'Hệ Thống Dữ Liệu Kinh Tế Xã Hội', desc:'Xây dựng hệ thống thu thập và tổng hợp dữ liệu kinh tế xã hội phục vụ các dự án phân tích của Hub.', status:'open', type:'ba', leader:'Long', members:[], link:true },
+      { id:'011', title:'Pilot Training: AI in Business Writing', desc:'Tổ chức buổi training nội bộ với Jason Trinh về cách sử dụng AI hợp lý trong business writing.', status:'active', type:'community', leader:'Phương Anh', members:[], link:false },
+      { id:'012', title:'YUSEA Urban Planning', desc:'Đồng tổ chức với YUSEA các buổi community building về đổi mới sáng tạo trong urban planning.', status:'active', type:'community', leader:'Thảo', members:[], link:false },
     ];
+
+    // ── STATE ─────────────────────────────────────────────────────
+    let QUESTS = loadData();
+    let editingId = null;
+    let currentFilter = 'all';
+    let isAdmin = localStorage.getItem('hb_admin') === 'true';
+
+    function loadData() {
+      try {
+        const saved = localStorage.getItem('hb_quests');
+        return saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DEFAULT_QUESTS));
+      } catch { return JSON.parse(JSON.stringify(DEFAULT_QUESTS)); }
+    }
+
+    function saveData() {
+      localStorage.setItem('hb_quests', JSON.stringify(QUESTS));
+    }
+
+    // ── AUTH ──────────────────────────────────────────────────────
+    function checkPassword() {
+      const val = document.getElementById('pw-input').value;
+      if (val === ADMIN_PASSWORD) {
+        localStorage.setItem('hb_admin', 'true');
+        isAdmin = true;
+        document.getElementById('pw-prompt').classList.remove('open');
+        document.getElementById('pw-input').value = '';
+        document.getElementById('pw-error').classList.remove('visible');
+        document.getElementById('pw-input').classList.remove('error');
+        activateAdmin();
+      } else {
+        document.getElementById('pw-input').classList.add('error');
+        document.getElementById('pw-error').classList.add('visible');
+      }
+    }
+
+    document.getElementById('pw-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    function activateAdmin() {
+      document.body.classList.add('admin-mode');
+      document.getElementById('admin-bar').classList.add('visible');
+      renderQuests(currentFilter);
+    }
+
+    function logout() {
+      localStorage.removeItem('hb_admin');
+      isAdmin = false;
+      document.body.classList.remove('admin-mode');
+      document.getElementById('admin-bar').classList.remove('visible');
+      renderQuests(currentFilter);
+    }
 
     // ── RENDER ────────────────────────────────────────────────────
     const STATUS_LABEL = { open: 'Open', active: 'In Progress', done: 'Done' };
@@ -860,6 +1149,7 @@
     };
 
     function renderQuests(filter = 'all') {
+      currentFilter = filter;
       const grid = document.getElementById('quest-grid');
       const filtered = QUESTS.filter(q => {
         if (filter === 'all') return true;
@@ -876,7 +1166,13 @@
         const memberCount = q.members.length;
         const squadText = memberCount === 0
           ? '<span style="color:var(--text-faint);font-size:11px;">Chưa có member — hãy là người đầu tiên</span>'
-          : `<span class="squad-count" style="margin-left:${memberCount > 0 ? '10px' : '0'}">${memberCount} member${memberCount > 1 ? 's' : ''}</span>`;
+          : `<span class="squad-count" style="margin-left:10px;">${memberCount} member${memberCount > 1 ? 's' : ''}</span>`;
+        const adminBtns = isAdmin
+          ? `<div class="admin-actions">
+               <button class="btn-edit" onclick="openEditModal('${q.id}')">✏️ Sửa</button>
+               <button class="btn-delete" onclick="deleteQuest('${q.id}')">🗑 Xoá</button>
+             </div>`
+          : '';
 
         return `
         <div class="quest-card" data-status="${q.status}" data-type="${q.type}">
@@ -899,18 +1195,110 @@
           <div class="quest-footer">
             <div class="quest-leader">${leaderHTML}</div>
           </div>
+          ${adminBtns}
         </div>`;
       }).join('');
 
-      // Add empty "post quest" card at end
       grid.innerHTML += `
         <div class="quest-card dashed">
           <div class="quest-name" style="color:var(--text-muted);">Đề xuất quest mới</div>
           <div class="quest-desc">Có initiative, contracted work, hoặc community idea? Liên hệ HiHUB leadership để tạo quest.</div>
           <div style="margin-top:auto;">
-            <a href="mailto:contact@hihub.vn" style="font-size:13px;color:var(--green);font-weight:600;text-decoration:none;">Liên hệ →</a>
+            <a href="mailto:son.vuong.workspace@gmail.com" style="font-size:13px;color:var(--green);font-weight:600;text-decoration:none;">Liên hệ →</a>
           </div>
         </div>`;
+
+      updateStats();
+    }
+
+    function updateStats() {
+      document.querySelector('#stat-quests').textContent = QUESTS.length;
+      const memberSet = new Set(QUESTS.flatMap(q => q.members).concat(QUESTS.map(q => q.leader).filter(Boolean)));
+      document.querySelector('#stat-members').textContent = memberSet.size;
+    }
+
+    // ── MODAL ─────────────────────────────────────────────────────
+    function openAddModal() {
+      editingId = null;
+      document.getElementById('modal-title').textContent = 'Thêm Quest mới';
+      document.getElementById('f-title').value = '';
+      document.getElementById('f-desc').value = '';
+      document.getElementById('f-status').value = 'open';
+      document.getElementById('f-type').value = 'ba';
+      document.getElementById('f-leader').value = '';
+      document.getElementById('f-members').value = '';
+      document.getElementById('f-link').value = 'false';
+      document.getElementById('quest-modal').classList.add('open');
+    }
+
+    function openEditModal(id) {
+      const q = QUESTS.find(x => x.id === id);
+      if (!q) return;
+      editingId = id;
+      document.getElementById('modal-title').textContent = 'Chỉnh sửa Quest';
+      document.getElementById('f-title').value = q.title;
+      document.getElementById('f-desc').value = q.desc;
+      document.getElementById('f-status').value = q.status;
+      document.getElementById('f-type').value = q.type;
+      document.getElementById('f-leader').value = q.leader || '';
+      document.getElementById('f-members').value = q.members.join(', ');
+      document.getElementById('f-link').value = q.link ? 'true' : 'false';
+      document.getElementById('quest-modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('quest-modal').classList.remove('open');
+      editingId = null;
+    }
+
+    function saveQuest() {
+      const title = document.getElementById('f-title').value.trim();
+      if (!title) { alert('Vui lòng nhập tên quest.'); return; }
+
+      const membersRaw = document.getElementById('f-members').value;
+      const members = membersRaw.split(',').map(s => s.trim()).filter(Boolean);
+
+      if (editingId) {
+        const idx = QUESTS.findIndex(x => x.id === editingId);
+        if (idx !== -1) {
+          QUESTS[idx] = {
+            ...QUESTS[idx],
+            title,
+            desc: document.getElementById('f-desc').value.trim(),
+            status: document.getElementById('f-status').value,
+            type: document.getElementById('f-type').value,
+            leader: document.getElementById('f-leader').value.trim(),
+            members,
+            link: document.getElementById('f-link').value === 'true',
+          };
+        }
+      } else {
+        const maxId = QUESTS.reduce((max, q) => Math.max(max, parseInt(q.id)), 0);
+        const newId = String(maxId + 1).padStart(3, '0');
+        QUESTS.push({
+          id: newId,
+          title,
+          desc: document.getElementById('f-desc').value.trim(),
+          status: document.getElementById('f-status').value,
+          type: document.getElementById('f-type').value,
+          leader: document.getElementById('f-leader').value.trim(),
+          members,
+          link: document.getElementById('f-link').value === 'true',
+        });
+      }
+
+      saveData();
+      closeModal();
+      renderQuests(currentFilter);
+    }
+
+    function deleteQuest(id) {
+      const q = QUESTS.find(x => x.id === id);
+      if (!q) return;
+      if (!confirm(`Xoá quest "${q.title}"?`)) return;
+      QUESTS = QUESTS.filter(x => x.id !== id);
+      saveData();
+      renderQuests(currentFilter);
     }
 
     // ── FILTERS ───────────────────────────────────────────────────
@@ -923,15 +1311,100 @@
       });
     });
 
-    // Init
-    renderQuests('all');
+    // Close modal on overlay click
+    document.getElementById('quest-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
 
-    // Update stats
-    document.querySelector('#stat-quests').textContent = QUESTS.length;
-    const openCount = QUESTS.filter(q => q.status === 'open').length;
-    document.querySelector('#stat-open').textContent = openCount;
-    const memberSet = new Set(QUESTS.flatMap(q => q.members).concat(QUESTS.map(q => q.leader).filter(Boolean)));
-    document.querySelector('#stat-members').textContent = memberSet.size;
+    // ── INIT ──────────────────────────────────────────────────────
+    // Check ?admin=true in URL to trigger password prompt
+    if (new URLSearchParams(window.location.search).get('admin') === 'true') {
+      document.getElementById('pw-prompt').classList.add('open');
+    }
+
+    // Restore admin session if previously logged in
+    if (isAdmin) activateAdmin();
+    else renderQuests('all');
+
+    // ── 30 BÀI TOÁN ───────────────────────────────────────────────
+    const BAI_TOAN = [
+      // NHÓM 1: ĐIỂM NGHẼN ĐÔ THỊ KÉO DÀI
+      { id:1, group:'do-thi', title:'Giải quyết ùn tắc giao thông đô thị', short:'Mô hình nào giúp giải quyết nhanh tình trạng ùn tắc giao thông trong điều kiện hạn chế quỹ đất?', output:'ITS thời gian thực, AI điều phối, hạ tầng số giao thông thống nhất' },
+      { id:2, group:'do-thi', title:'Trật tự & vệ sinh đô thị bền vững', short:'Cơ chế nào xác lập trật tự, kỷ cương và vệ sinh đô thị thông qua quản trị hiện đại và giám sát tự động?', output:'Hệ thống giám sát thông minh, chuỗi logistics rác thải, mô hình kinh tế tuần hoàn' },
+      { id:3, group:'do-thi', title:'Kiểm soát phát thải & phục hồi môi trường', short:'Làm thế nào để kiểm soát triệt để các nguồn phát thải và phục hồi chất lượng môi trường hướng đến Net Zero?', output:'Hệ thống định danh nguồn thải thời gian thực, tín chỉ carbon, công nghệ xử lý ô nhiễm' },
+      { id:4, group:'do-thi', title:'Ngập úng đô thị trong biến đổi khí hậu', short:'Cách thức nào giải quyết tình trạng ngập úng trong điều kiện đô thị hóa cao?', output:'Cảnh báo sớm thời gian thực, Thành phố bọt biển, bể ngầm chứa nước' },
+      { id:5, group:'do-thi', title:'An toàn thực phẩm cho 10 triệu dân', short:'Biện pháp nào kiểm soát và bảo đảm an toàn thực phẩm trên địa bàn Thủ đô?', output:'Truy xuất nguồn gốc thực phẩm, mạng lưới giám sát nông nghiệp thông minh' },
+
+      // NHÓM 2: KHÔNG GIAN ĐÔ THỊ
+      { id:6, group:'khong-gian', title:'Quản trị không gian đô thị đa tầng', short:'Cách thức nào khai thác hiệu quả tài nguyên không gian đô thị: Ngầm – Mặt đất – Tầm thấp – Tầng cao?', output:'Bản sao số đô thị, hệ thống cấp quyền không gian đa tầng, khung chính sách khai thác' },
+      { id:7, group:'khong-gian', title:'Kinh tế không gian tầm thấp (UAV)', short:'Cách thức nào thiết lập hành lang bay và quản lý an toàn để kích hoạt "Kinh tế không gian tầm thấp"?', output:'Hành lang bay UTM, quy hoạch phân vùng tầm thấp, các dịch vụ bay đô thị' },
+      { id:8, group:'khong-gian', title:'Tái thiết hạ tầng đô thị xanh & thông minh', short:'Bằng cách nào tái thiết hạ tầng đô thị xanh, thông minh, bền vững cho Hà Nội?', output:'Khu đô thị tái thiết đa mục tiêu, khu phố sáng tạo, căn hộ TOD chất lượng cao' },
+      { id:9, group:'khong-gian', title:'Số hóa đất đai & thị trường bất động sản', short:'Cách thức nào số hóa toàn diện tài nguyên đất đai và quản trị thị trường bất động sản minh bạch?', output:'Cơ sở dữ liệu đất đai số, nền tảng giao dịch BĐS, dịch vụ công số về đất đai' },
+
+      // NHÓM 3: KIẾN TẠO TĂNG TRƯỞNG KINH TẾ & LÀM CHỦ CÔNG NGHỆ
+      { id:10, group:'kinh-te', title:'Đổi mới quản trị Thủ đô theo hướng phục vụ', short:'Phương thức nào đổi mới quản trị Thủ đô, cung cấp dịch vụ công toàn trình, cá thể hóa, tự động dựa trên dữ liệu?', output:'Dịch vụ công toàn trình không giấy tờ, Digital Twin hành chính, hỗ trợ ra quyết định dựa trên dữ liệu' },
+      { id:11, group:'kinh-te', title:'Mô hình tăng trưởng mới dựa trên TFP', short:'Phương thức nào xác lập mô hình tăng trưởng mới dựa trên năng suất các nhân tố tổng hợp và kinh tế tri thức?', output:'Đề án tổng thể mô hình tăng trưởng mới, hệ thống đo lường kinh tế tri thức' },
+      { id:12, group:'kinh-te', title:'Kinh tế dữ liệu & kinh tế số 40% GRDP', short:'Phương thức nào đưa kinh tế dữ liệu thành động lực chủ đạo, kinh tế số đạt 40% GRDP vào năm 2030?', output:'Hạ tầng dữ liệu lớn, nền tảng giao dịch tài sản số, các mô hình kinh tế số' },
+      { id:13, group:'kinh-te', title:'Hệ sinh thái "Make in Hanoi"', short:'Kiến trúc và cơ chế nào để xây dựng hệ sinh thái kinh tế nền tảng "Make in Hanoi" bền vững và tự chủ?', output:'Hệ sinh thái nền tảng số liên thông, hệ điều hành số cho nền kinh tế' },
+      { id:14, group:'kinh-te', title:'Cách mạng di sản & công nghiệp văn hóa', short:'Bằng phương thức nào chuyển hóa giá trị Thăng Long – Hà Nội thành động lực kinh tế mũi nhọn qua công nghiệp văn hóa?', output:'Sản phẩm văn hóa công nghệ cao, nền tảng số bảo tàng, chuỗi giá trị công nghiệp văn hóa' },
+      { id:15, group:'kinh-te', title:'Du lịch thông minh & kinh tế đêm', short:'Phương thức nào phát triển du lịch thông minh và kinh tế đêm thu hút 12 triệu khách quốc tế?', output:'Khu du lịch thông minh, AR/VR di sản, nền tảng du lịch số Thủ đô' },
+      { id:16, group:'kinh-te', title:'Logistics thông minh & trung tâm liên vùng', short:'Cách thức nào xây dựng hệ thống logistics thông minh và các trung tâm trung chuyển liên vùng?', output:'Logistics thông minh đa phương thức, trung tâm trung chuyển hiện đại, nền tảng số điều phối' },
+      { id:17, group:'kinh-te', title:'Nông nghiệp công nghệ cao & kinh tế sinh thái', short:'Phát triển nông nghiệp công nghệ cao gắn với kinh tế sinh thái như thế nào?', output:'Vùng nông nghiệp CNC, nền tảng nông nghiệp số, du lịch nông nghiệp' },
+      { id:18, group:'kinh-te', title:'Công nghiệp hóa công nghệ cao & sản xuất thông minh', short:'Tái định hình công nghiệp hóa theo hướng công nghệ cao và sản xuất thông minh như thế nào?', output:'Nền tảng sản xuất thông minh, trung tâm R&D công nghệ, chuỗi giá trị CNC' },
+      { id:19, group:'kinh-te', title:'Hà Nội thành trung tâm tài chính quốc tế', short:'Phương thức nào xây dựng Hà Nội thành trung tâm tài chính và dịch vụ chất lượng cao quốc tế?', output:'Hệ sinh thái FinTech, nền tảng tài chính số, trung tâm tài chính quốc tế' },
+      { id:20, group:'kinh-te', title:'Kinh tế nhà nước dẫn dắt, tư nhân là động lực', short:'Cách thức nào để kinh tế nhà nước dẫn dắt và kinh tế tư nhân thực sự là động lực quan trọng nhất?', output:'Quỹ đầu tư thành phố, doanh nghiệp dẫn dắt chuỗi giá trị, nền tảng kết nối công-tư' },
+      { id:21, group:'kinh-te', title:'Năng suất lao động & chuyển đổi số SME', short:'Phương thức nào tăng năng suất lao động và chuyển đổi số toàn diện cho mạng lưới SME?', output:'Nền tảng CĐS SME, AI và tự động hóa "Make in Hanoi", giải pháp nâng năng suất' },
+      { id:22, group:'kinh-te', title:'Thu hút & trọng dụng nhân tài toàn cầu', short:'Xây dựng Thủ đô thành trung tâm thu hút nhân tài toàn cầu và nhà khoa học đầu ngành bằng các con đường nào?', output:'Hệ thống dữ liệu nhân tài, khu không gian sáng tạo chuẩn quốc tế, chương trình đào tạo CNC' },
+      { id:23, group:'kinh-te', title:'Làm chủ 4 công nghệ chiến lược', short:'Kiến trúc và lộ trình nào để Hà Nội làm chủ 4 sản phẩm công nghệ chiến lược ưu tiên?', output:'LLM tiếng Việt, AI camera biên, blockchain, UAV' },
+      { id:24, group:'kinh-te', title:'Digital Twin cho quản trị đô thị', short:'Làm thế nào ứng dụng Bản sao số (Digital Twin) vào giải quyết các bài toán đô thị phức tạp?', output:'Mô hình Digital Twin toàn Thủ đô, hệ thống mô phỏng hỗ trợ ra quyết định' },
+      { id:25, group:'kinh-te', title:'Hà Nội thành trung tâm đổi mới sáng tạo', short:'Mô hình và hệ sinh thái nào giúp Hà Nội trở thành trung tâm đổi mới sáng tạo hàng đầu khu vực?', output:'Trung tâm ĐMST quy mô lớn, Hòa Lạc thành Thung lũng Công nghệ, quỹ đầu tư mạo hiểm' },
+
+      // NHÓM 4: AN NINH, AN SINH XÃ HỘI & PHÁT TRIỂN BỀN VỮNG
+      { id:26, group:'an-sinh', title:'"Pháo đài dữ liệu" & an ninh thông minh', short:'"Pháo đài dữ liệu" và hệ thống an ninh thông minh của Thủ đô được thiết lập bằng cách nào?', output:'Hệ thống pháo đài dữ liệu, mạng lưới giám sát AI, nền tảng cảnh báo sớm an ninh' },
+      { id:27, group:'an-sinh', title:'An sinh xã hội đa tầng trên nền tảng số', short:'Kiến trúc và mô hình quản trị nào để vận hành an sinh xã hội đa tầng, hiện đại trên nền tảng dữ liệu lớn?', output:'Hệ thống an sinh số, dự báo nhu cầu, nền tảng điều phối nguồn lực xã hội hóa' },
+      { id:28, group:'an-sinh', title:'Giáo dục & y tế đạt chuẩn quốc tế', short:'Phương thức nào đưa giáo dục và y tế Thủ đô đạt chuẩn quốc tế dựa trên nền tảng công nghệ số?', output:'Trường học và bệnh viện chuẩn quốc tế, hồ sơ sức khỏe điện tử toàn dân, giáo dục số' },
+      { id:29, group:'an-sinh', title:'Kinh tế xanh & kinh tế tuần hoàn', short:'Cách thức nào phát triển kinh tế xanh, kinh tế tuần hoàn thành động lực tăng trưởng Thủ đô?', output:'Công nghệ tái chế, chuỗi giá trị xanh, mô hình kinh tế tuần hoàn đa ngành' },
+      { id:30, group:'an-sinh', title:'Thích ứng già hóa dân số & thu hẹp khoảng cách số', short:'Phương án nào quản trị lao động hiện đại và thích ứng với già hóa dân số, thu hẹp khoảng cách năng lực số?', output:'Đề án thích ứng già hóa, dịch vụ số phổ cập toàn dân, dự báo cung-cầu lao động' },
+    ];
+
+    const GROUP_COLOR = {
+      'do-thi':     { bg: '#FDECEA', color: '#B91C1C', label: 'Điểm nghẽn đô thị' },
+      'khong-gian': { bg: '#E6F1FB', color: '#185FA5', label: 'Không gian đô thị' },
+      'kinh-te':    { bg: '#FAEEDA', color: '#854F0B', label: 'Kinh tế & Công nghệ' },
+      'an-sinh':    { bg: '#E1F5EE', color: '#0F6E56', label: 'An ninh & An sinh' },
+    };
+
+    function renderBaiToan(filter = 'all') {
+      const grid = document.getElementById('bt-grid');
+      const filtered = filter === 'all' ? BAI_TOAN : BAI_TOAN.filter(b => b.group === filter);
+      grid.innerHTML = filtered.map(b => {
+        const gc = GROUP_COLOR[b.group];
+        return `
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;display:flex;flex-direction:column;gap:8px;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--gray-mid)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:11px;font-weight:700;color:var(--text-faint);letter-spacing:0.05em;">#${String(b.id).padStart(2,'0')}</span>
+            <span style="font-size:11px;padding:2px 8px;border-radius:99px;background:${gc.bg};color:${gc.color};font-weight:600;">${gc.label}</span>
+          </div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:-0.02em;color:var(--text);line-height:1.35;">${b.title}</div>
+          <div style="font-size:12.5px;color:var(--text-muted);line-height:1.6;flex:1;">${b.short}</div>
+          <div style="padding-top:8px;border-top:1px solid var(--border);">
+            <div style="font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-faint);margin-bottom:3px;">Sản phẩm kỳ vọng</div>
+            <div style="font-size:12px;color:var(--text-muted);line-height:1.5;">${b.output}</div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    document.querySelectorAll('#bt-filters .filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#bt-filters .filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderBaiToan(this.dataset.group);
+      });
+    });
+
+    renderBaiToan();
+
   </script>
 
 </body>
