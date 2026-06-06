@@ -6,7 +6,7 @@
   <title>HubBiz — Quest Board</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -72,11 +72,12 @@
     }
 
     .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-size: 18px;
-      font-weight: 800;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
       color: var(--text);
       text-decoration: none;
+      letter-spacing: -0.01em;
     }
 
     .nav-logo span { color: var(--green); }
@@ -154,16 +155,21 @@
     }
 
     .hero-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 56px;
-      font-weight: 800;
-      line-height: 1.0;
+      font-family: 'Fraunces', serif;
+      font-size: 60px;
+      font-weight: 900;
+      line-height: 0.95;
       letter-spacing: -0.02em;
       color: var(--text);
       margin-bottom: 1.25rem;
+      font-optical-sizing: auto;
     }
 
-    .hero-title .accent { color: var(--green); }
+    .hero-title .accent {
+      color: var(--green);
+      font-style: italic;
+      font-weight: 900;
+    }
 
     .hero-desc {
       font-size: 16.5px;
@@ -224,13 +230,14 @@
     }
 
     .hero-stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 38px;
-      font-weight: 800;
+      font-family: 'Fraunces', serif;
+      font-size: 40px;
+      font-weight: 900;
       letter-spacing: -0.03em;
       color: var(--text);
       line-height: 1;
       margin-bottom: 4px;
+      font-optical-sizing: auto;
     }
 
     .hero-stat-label {
@@ -252,10 +259,10 @@
     }
 
     .section-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-weight: 700;
+      letter-spacing: -0.025em;
       color: var(--text);
       margin-bottom: 3rem;
       line-height: 1.15;
@@ -277,12 +284,13 @@
     }
 
     .step-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 40px;
-      font-weight: 800;
+      font-family: 'Fraunces', serif;
+      font-size: 38px;
+      font-weight: 900;
       color: var(--border);
       line-height: 1;
       margin-bottom: 0.75rem;
+      font-optical-sizing: auto;
     }
 
     .step-label {
@@ -373,10 +381,10 @@
     }
 
     .quest-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
       color: var(--text);
       line-height: 1.35;
     }
@@ -503,10 +511,10 @@
     .guild-icon-wrap svg { width: 24px; height: 24px; color: var(--green); }
 
     .guild-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 17px;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
       margin-bottom: 8px;
       line-height: 1.3;
     }
